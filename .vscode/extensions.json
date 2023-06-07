@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "wix.vscode-import-cost",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "lllllllqw.jsdoc",
+    "styled-components.vscode-styled-components",
+    "sonarsource.sonarlint-vscode",
+    "dbaeumer.vscode-eslint",
+    "vespa-dev-works.jestRunIt",
+    "aaron-bond.better-comments"
+  ]
+}
