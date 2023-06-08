@@ -4,11 +4,15 @@ import { useGetPokemonsQuery } from "@/redux/services/pokemonApi";
 import { useState } from "react";
 
 import Card from "@/components/card";
+import CategoryLoading from "@/components/loading/category";
 
 export default function Home() {
   const [offset, setOffset] = useState(0);
 
   const { isLoading, data } = useGetPokemonsQuery(0);
+
+  if (isLoading) return <CategoryLoading total={15} />;
+
   return (
     <div className="mt-4">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">

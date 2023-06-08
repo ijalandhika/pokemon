@@ -2,6 +2,7 @@
 
 import { useGetPokemonByNameQuery } from "@/redux/services/pokemonApi";
 import CardDetail from "@/components/card/detail";
+import DetailLoading from "@/components/loading/detail";
 import type { PokemonData } from "@/lib/types";
 
 type IDetailPage = {
@@ -14,7 +15,7 @@ export default function DetailPage({ params }: IDetailPage) {
   const { name } = params;
   const { isLoading, data } = useGetPokemonByNameQuery(name);
 
-  if (isLoading) return null;
+  if (isLoading) return <DetailLoading />;
 
   return (
     <section className="text-gray-700 body-font overflow-hidden">
