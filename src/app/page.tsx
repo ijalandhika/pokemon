@@ -1,12 +1,12 @@
 "use client";
 
-import { useGetPokemonsQuery } from "@/redux/services/pokemonApi";
-
+import useSearchPokemon from "@/hooks/useSearchPokemon";
 import Card from "@/components/card";
 import CategoryLoading from "@/components/loading/category";
 
 export default function Home() {
-  const { isLoading, data } = useGetPokemonsQuery(0);
+  const { isLoading, data, next, previous, onFetchNext, onFetchPrevious } =
+    useSearchPokemon();
 
   if (isLoading) return <CategoryLoading total={15} />;
 
@@ -18,6 +18,22 @@ export default function Home() {
             <Card name={e.name} index={i} key={`keysnumber-${i.toString()}`} />
           ))}
         </div>
+      </div>
+      <div className="mt-10 flex justify-center gap-5">
+        <button
+          disabled={!previous}
+          className="disabled:bg-gray-300 px-3 py-1 bg-blue-300"
+          onClick={() => onFetchPrevious()}
+        >
+          prev
+        </button>
+        <button
+          disabled={!next}
+          className="disabled:bg-gray-300 px-3 py-1 bg-blue-300"
+          onClick={() => onFetchNext()}
+        >
+          next
+        </button>
       </div>
     </div>
   );
