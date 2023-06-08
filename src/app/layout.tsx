@@ -1,5 +1,9 @@
 import "./globals.css";
+// import "react-toastify/dist/ReactToastify.css";
+
 import { Inter } from "next/font/google";
+// import { ToastContainer } from "react-toastify";
+
 import Header from "@/components/header";
 import { Providers } from "@/redux/provider";
 
@@ -22,7 +26,10 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          {/* <ToastContainer /> */}
+        </Providers>
       </body>
     </html>
   );

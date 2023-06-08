@@ -22,9 +22,12 @@ const Header = () => {
         </div>
 
         <div className="justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="/pokets"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Catched list <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
     </header>

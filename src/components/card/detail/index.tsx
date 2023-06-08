@@ -1,16 +1,18 @@
 import { FC } from "react";
 import Image from "next/image";
-import type { PokemonData } from "@/lib/types";
 import PokeType from "./type";
 import PokeStat from "./stat";
 import PokeAbility from "./ability";
+import usePokemon from "@/hooks/usePokemon";
 
+import type { PokemonData } from "@/lib/types";
 interface ICardDetail {
   data: PokemonData;
 }
 
 const CardDetail: FC<ICardDetail> = ({ data }) => {
-  const pokeIndex = ("000" + data?.id).slice(-3);
+  const { onSaveMonster, onReleaseMonster, pokeIndex, isOwned } =
+    usePokemon(data);
 
   return (
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -37,14 +39,17 @@ const CardDetail: FC<ICardDetail> = ({ data }) => {
         <div className="mb-4">
           <PokeAbility abilities={data.abilities} />
         </div>
-        {/* <p className="leading-relaxed">
-          Abilities: swarm, sniper Some Moves: swords-dance, cut, headbutt,
-          fury-attack, take-down
-        </p> */}
 
         <div className="flex">
-          <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
-            Catch
+          <button
+            className={`flex ml-auto text-white  border-0 py-2 px-6 focus:outline-none rounded ${
+              isOwned
+                ? "bg-red-500 hover:bg-red-600"
+                : "bg-green-500 hover:bg-green-600"
+            }`}
+            onClick={() => (isOwned ? onReleaseMonster() : onSaveMonster())}
+          >
+            {isOwned ? "Release" : "Catch"}
           </button>
         </div>
       </div>

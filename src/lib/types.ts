@@ -375,4 +375,9 @@ export interface PokemonData {
   weight: number;
 }
 
+export type PokeSaved = {
+  name: string;
+  index: string;
+};
+
 export default PokemonList;

@@ -1,8 +1,13 @@
 "use client";
 
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
+
 import { useGetPokemonByNameQuery } from "@/redux/services/pokemonApi";
 import CardDetail from "@/components/card/detail";
 import DetailLoading from "@/components/loading/detail";
+
 import type { PokemonData } from "@/lib/types";
 
 type IDetailPage = {
@@ -22,6 +27,7 @@ export default function DetailPage({ params }: IDetailPage) {
       <div className="container px-5 py-6 mx-auto">
         <CardDetail data={data as PokemonData} />
       </div>
+      <ToastContainer />
     </section>
   );
 }

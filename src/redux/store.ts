@@ -5,9 +5,11 @@ import {
   reducerPath as apiReducerPath,
   middleware as apiMiddleware,
 } from "@/redux/services/pokemonApi";
+import poketMonsterReducer from "./features/savePokemon";
 
 export const store = configureStore({
   reducer: {
+    poketMonsterReducer,
     [apiReducerPath]: apiReducer,
   },
   devTools: process.env.NODE_ENV !== "production",

@@ -1,14 +1,11 @@
 "use client";
 
 import { useGetPokemonsQuery } from "@/redux/services/pokemonApi";
-import { useState } from "react";
 
 import Card from "@/components/card";
 import CategoryLoading from "@/components/loading/category";
 
 export default function Home() {
-  const [offset, setOffset] = useState(0);
-
   const { isLoading, data } = useGetPokemonsQuery(0);
 
   if (isLoading) return <CategoryLoading total={15} />;
