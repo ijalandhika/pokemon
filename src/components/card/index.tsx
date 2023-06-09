@@ -8,7 +8,7 @@ export interface ICard {
 }
 
 const Card: FC<ICard> = ({ name, index }) => {
-  const pokeIndex = ("000" + (index + 1)).slice(-3);
+  const pokeIndex = ("000" + index).slice(-3);
 
   return (
     <Link href={`/pokemon/${name}`} className="group my-2">

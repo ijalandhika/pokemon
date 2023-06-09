@@ -3,20 +3,12 @@ import { toast } from "react-toastify";
 
 import type { PokeSaved } from "@/lib/types";
 
-const LOCAL_STORAGE_KEY = "pokemons";
-
-const initialPokemon = () => {
-  const pokemons = window?.localStorage.getItem(LOCAL_STORAGE_KEY);
-
-  return pokemons ? JSON.parse(pokemons) : [];
-};
-
 type Poket = {
   value: PokeSaved[];
 };
 
 const initialState = {
-  value: initialPokemon(),
+  value: [],
 } as Poket;
 
 export const poketMonster = createSlice({
@@ -33,11 +25,6 @@ export const poketMonster = createSlice({
         newValue.push(payload);
         state.value = newValue;
 
-        window.localStorage.setItem(
-          LOCAL_STORAGE_KEY,
-          JSON.stringify(newValue)
-        );
-
         toast.success("Horray!! You've a new collections", {
           position: toast.POSITION.BOTTOM_RIGHT,
         });
@@ -50,10 +37,6 @@ export const poketMonster = createSlice({
     releaseMonster: (state, action: PayloadAction<string>) => {
       const filtered = state.value.filter((e) => e.name !== action.payload);
       state.value = filtered;
-      window.localStorage.setItem(
-        LOCAL_STORAGE_KEY,
-        JSON.stringify(state.value)
-      );
 
       toast.success("This pokemon has been released", {
         position: toast.POSITION.BOTTOM_RIGHT,
