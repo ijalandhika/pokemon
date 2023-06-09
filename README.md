@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Catching pokemon by https://pokeapi.co/
+
+## Built By
+
+[![Next][Next.js]][Next-url] &nbsp;
+[![Tailwind][TailwindUI]][TailwindUI-url] &nbsp;
+[![Redux][Redux]][Redux-url] &nbsp;
+[![Jest][Jest]][Jest-url] &nbsp;
+[![TestingLibrary][TestingLibrary]][TestingLibrary-url] &nbsp;
+[![Typescript][Typescript]][Typescript-url] &nbsp;
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  yarn install
+  # or
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  yarn dev
+  # or
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Run test
 
-## Learn More
+```bash
+  yarn test
+  # or
+  npm run test
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[TailwindUI]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindUI-url]: https://tailwindui.com/
+[Redux]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
+[Redux-url]: https://redux-toolkit.js.org/
+[Typescript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
+[Jest]: https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white
+[Jest-url]: https://jestjs.io/
+[TestingLibrary]: https://img.shields.io/badge/testing%20library-323330?style=for-the-badge&logo=testing-library&logoColor=red
+[TestingLibrary-url]: https://testing-library.com/
+[React]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://react.dev/
