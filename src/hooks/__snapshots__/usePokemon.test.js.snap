@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useHooks will not owned 1`] = `
+<div>
+  <p>
+    not owned
+  </p>
+  <button
+    name="addnew"
+  >
+    Add new pokemons
+  </button>
+</div>
+`;

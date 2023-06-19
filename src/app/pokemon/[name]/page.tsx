@@ -21,6 +21,7 @@ export default function DetailPage({ params }: IDetailPage) {
   const { isLoading, data } = useGetPokemonByNameQuery(name);
 
   if (isLoading) return <DetailLoading />;
+  console.log("lalalal", { data });
 
   return (
     <section className="text-gray-700 body-font overflow-hidden">

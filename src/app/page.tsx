@@ -8,6 +8,8 @@ export default function Home() {
   const { isLoading, data, next, previous, onFetchNext, onFetchPrevious } =
     useSearchPokemon();
 
+  console.log("laalala", isLoading);
+
   if (isLoading) return <CategoryLoading total={15} />;
 
   return (
